@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          sshpass -p ${{ secrets.SSH_PRIVATE_KEY }} ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ec2-user@${{ secrets.EC2_INSTANCE_IP }} 'bash -s' < deploy-script.sh
+          sshpass -p ${{ secrets.SSH_PRIVATE_KEY }} ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@${{ secrets.EC2_INSTANCE_IP }} 'bash -s' < deploy-script.sh
